@@ -4,7 +4,10 @@
 from flask import Flask, render_template, send_file
 import feedparser
 import unicodedata
+from flask_bootstrap import Bootstrap
+
 app = Flask(__name__, static_url_path='/static', static_folder='static')
+Bootstrap(app)
 
 @app.route("/")
 def index():
