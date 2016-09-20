@@ -1,0 +1,17 @@
+.bleeeh {
+    padding: 10vw;
+}
+.title {
+    padding: 10vw 10vw 0 10vw;
+}
+
+.title > h4 {
+    padding-left: 5vw;
+    padding-top: -5vw;
+    padding-bottom: -10vw;
+}
+
+p {
+    text-align: justify;
+}
+
