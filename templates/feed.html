@@ -1,0 +1,9 @@
+<div class='row'>
+    {% for e in entries %}
+        <h1>{{e.title}}</h1>
+        <h5>Published on: {{e.published}}</h5>
+        {% for content in e.content %}
+            <p>{{content.value|safe}}</p>
+        {% endfor %}
+    {% endfor %}
+</div>
