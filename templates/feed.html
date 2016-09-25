@@ -4,24 +4,60 @@
 {{super()}}
 
 <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fonts_style.css')}}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 {% endblock %}
 
 
 {% block content %}
+  <!-- Side nav bar -->
 
-<div class='title'>
-    <h1>RSS Feed - Gaming news and stuff.</h1><br><h4> But mainly stuff.</h4>
-</div>
+  <nav class="main-menu" id="sidebar">
+    <ul>
+      <li>
+        <a href="/">
+          <i class="fa fa-home fa-2x"></i>
+          <span class="nav-text">
+            Home
+          </span>
+        </a>
 
-<div class='bleeeh row'>
-    {% for e in entries %}
-        <h3>{{e.title}}</h3>
-        <h5>Published on: {{e.published}}</h5>
-        {% for content in e.content %}
-            <p>{{content.value|safe}}</p>
-        {% endfor %}
-    {% endfor %}
-</div>
+      </li>
+      <li class="has-subnav">
+        <a href="/feed">
+          <i class="fa fa-rss fa-2x"></i>
+          <span class="nav-text">
+            Very Cool Feed
+          </span>
+        </a>
+
+        <li class="has-subnav">
+          <a href="/logout">
+            <i class="fa fa-lock fa-2x"></i>
+            <span class="nav-text">
+              Logout
+            </span>
+          </a>
+
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+        <div class='title'>
+            <h2>RSS Feed - Gaming news and stuff.</h2><br><h4> But mainly stuff.</h4>
+        </div>
+
+        <div class='bleeeh row'>
+            {% for e in entries %}
+                <h3>{{e.title}}</h3>
+                <h5>Published on: {{e.published}}</h5>
+                {% for content in e.content %}
+                    <p>{{content.value|safe}}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

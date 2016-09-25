@@ -1,8 +1,14 @@
 .bleeeh {
     padding: 10vw;
 }
+
 .title {
     padding: 10vw 10vw 0 10vw;
+}
+
+.title > h2 {
+    color:#222222;
+    size: 16.5vw;
 }
 
 .title > h4 {
@@ -13,8 +19,16 @@
 
 p {
     text-align: justify;
+    color: #222222;
 }
 
+.content {
+    padding-left: 250px;
+}
+
+.main-menu {
+    position: fixed;
+}
 
 /*STYLING FOR THE COMPONENTS OF COLORCLOCK PAGE*/
 
@@ -71,7 +85,7 @@ z index creates layers, basically.
 So here, the sidebar is on top of the color clock*/
 .main-menu {
 border-right:1px solid #778899;
-position:absolute;
+position:fixed;
 top:0;
 bottom:0;
 left:0;
@@ -82,6 +96,7 @@ overflow:visible;
 transition:width .05s linear;
 -webkit-transform:translateZ(0) scale(1,1);
 z-index:10;
+padding-top: 15vh;
 }
 
 /*EACH LIST ELEMENT*/
@@ -130,5 +145,8 @@ margin:0;
 padding:0;
 }
 
-
+/*THIS IS THE HOVER THING*/
+.main-menu li:hover>a,nav{
+color: #000000;
+}
 
