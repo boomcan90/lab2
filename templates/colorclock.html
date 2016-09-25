@@ -4,7 +4,7 @@
 
 <head>
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/colorclock_styling.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fonts_style.css')}}">
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
@@ -40,18 +40,18 @@
 
       </li>
       <li class="has-subnav">
-        <a href="/aboutme">
-          <i class="fa fa-user fa-2x"></i>
+        <a href="/feed">
+          <i class="fa fa-rss fa-2x"></i>
           <span class="nav-text">
-            About me
+            Very Cool Feed
           </span>
         </a>
 
         <li class="has-subnav">
-          <a href="#">
-            <i class="fa fa-rocket fa-2x"></i>
+          <a href="/logout">
+            <i class="fa fa-lock fa-2x"></i>
             <span class="nav-text">
-              Color Clock
+              Logout
             </span>
           </a>
 

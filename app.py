@@ -63,14 +63,14 @@ def login():
         user = User()
         user.id = email
         flask_login.login_user(user)
-        return flask.redirect(flask.url_for('index'))
+        return flask.redirect(flask.url_for('hello', name=flask_login.current_user.id))
 
     return 'Bad login'
 
 @app.route('/')
 @flask_login.login_required
 def index():
-    return render_template('index.html')
+    return flask.redirect(flask.url_for('hello', name=flask_login.current_user.id))
 
 @app.route('/hello/<name>')
 @flask_login.login_required
