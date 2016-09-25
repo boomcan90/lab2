@@ -1,0 +1,138 @@
+/*STYLING FOR THE COMPONENTS OF COLORCLOCK PAGE*/
+
+#colorInHex{
+    color : #FFFFF0;
+    font-size: 25px;
+    font-family: 'Muli_light', sans-serif;
+    text-align: center;
+    margin-top: 80px;
+}
+
+body{
+    width: 95%;
+}
+
+
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 150px;
+    color: #FFFAFA;
+    letter-spacing: 15px;
+    margin-bottom: 50px;
+}
+
+
+#quote{
+    color : #FFF5EE;
+    margin-top: 30px;
+    font-size: 35px;
+    font-family: 'KGEyesWideOpen',sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+
+}
+
+
+/*@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);*/
+
+/*@import url(http://fonts.googleapis.com/css?family=Titillium+Web:300);
+*/
+
+
+/*ICONS (?)*/
+.fa-2x{
+position: relative;
+display: table-cell;
+width: 70px;
+height: 36px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+
+
+/*SIDEBAR STUFF: Controls sidebar in non expanded state
+z index creates layers, basically.
+So here, the sidebar is on top of the color clock*/
+.main-menu {
+border-right:1px solid #778899;
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+height:100%;
+width:220px;
+overflow:visible;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:10;
+}
+
+/*EACH LIST ELEMENT*/
+.main-menu li {
+position:relative;
+display:block;
+width:200px;
+margin: 7px 0;
+}
+
+/*THE ENTIRE LIST AS A WHOLE*/
+.main-menu>ul{
+margin-top: 150px;
+}
+
+/*EACH A TAG*/
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#999;
+font-size: 14px;
+text-decoration:none;
+-webkit-transform:translateZ(0) scale(1,1);
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+}
+
+
+/*TAGS NEXT TO ICONS*/
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+font-family:'Muli_light', cursive;
+font-size: 15px;
+letter-spacing: 1.5px;
+}
+
+/*DIV - CONTAINER*/
+#inALine{
+position:absolute;
+left:0;
+bottom:0;
+width:100px;
+float: left;
+}
+
+/*MARGIN FOR EACH ELEMENT IN LIST?*/
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+
+/*THIS IS THE HOVER THING*/
+.main-menu li:hover>a,nav{
+color: #000000;
+background: #F5F5F5;
+}
+
+
+
+
