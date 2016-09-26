@@ -50,22 +50,25 @@ def request_loader(request):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if flask.request.method == 'GET':
-        return '''
-               <form action='login' method='POST'>
-                <input type='text' name='email' id='email' placeholder='email'></input>
-                <input type='password' name='pw' id='pw' placeholder='password'></input>
-                <input type='submit' name='submit'></input>
-               </form>
-               '''
+        return render_template('login.html', d={})
+        #return '''
+         #      <form action='login' method='POST'>
+          #      <input type='text' name='email' id='email' placeholder='email'></input>
+           #     <input type='password' name='pw' id='pw' placeholder='password'></input>
+            #    <input type='submit' name='submit'></input>
+             #  </form>
+              # '''
 
-    email = flask.request.form['email']
-    if flask.request.form['pw'] == users[email]['pw']:
+    email = flask.request.form['username']
+    if not email in users.keys():
+        return render_template('login.html', d={'error': 'Invalid username!'})
+    if flask.request.form['password'] == users[email]['pw']:
         user = User()
         user.id = email
         flask_login.login_user(user)
         return flask.redirect(flask.url_for('hello', name=flask_login.current_user.id))
 
-    return 'Bad login'
+    return render_template('login.html', d={'error': 'Invalid Username or passworr'})
 
 @app.route('/')
 @flask_login.login_required
@@ -105,6 +108,8 @@ def unauthorized_handler():
 
 if __name__=='__main__':
     app.config["SECRET_KEY"] = "TEAMROCKET"
-    app.run(debug=True, host='0.0.0.0')
+    app.config["TEMPLATES_AUTO_RELOAD"] = True
+    app.run(debug=True)
+
 
 

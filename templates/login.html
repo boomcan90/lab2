@@ -1,23 +1,56 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Please login</h1>
-      <br>
-      <form action="" method="post">
-        <input type="text" placeholder="Username" name="username" value="{{
-          request.form.username }}">
-         <input type="password" placeholder="Password" name="password" value="{{
-          request.form.password }}">
-        <input class="btn btn-default" type="submit" value="Login">
-      </form>
-      {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}
-      {% endif %}
-    </div>
-  </body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
+        <style>
+            body {
+                height: 100%;
+                overflow: hidden;
+            }
+            .container {
+                margin-top: 42.5vh;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            input {
+                float: inline;
+                padding-left: 2vh;
+                padding-right: 2vh;
+            }
+
+            input[type='text'], input[type='password'] {
+                width: 30%;
+                padding: 10px;
+                display: inline;
+                margin: 0 10px;
+            }
+
+            .button {
+                vertical-align: top;
+                padding: .80em 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+          <div class="floater">
+              {% if d.error %}
+                <p class="error"><strong>Error:</strong> {{ d.error }}
+              {% endif %}
+              <br>
+              <form action="" method="post">
+                <div class="row">
+                    <input type="text" placeholder="Username" name="username" value="{{
+                      request.form.username }}">
+                     <input type="password" placeholder="Password" name="password" value="{{
+                      request.form.password }}">
+                    <input class="success hollow button" type="submit" value="Login">
+                </div>
+              </form>
+
+            </div>
+        </div>
+    </body>
 </html>
